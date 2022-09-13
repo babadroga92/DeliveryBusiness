@@ -1,0 +1,18 @@
+<customers>
+    <customer id="101">
+
+        <FullName>Ljubisa Coric</FullName>
+        <Address>Glavna 78</Address>
+        <City>1</City>
+    </customer>
+    <customer id="102">
+        <FullName>Vladimir Dobrijevic</FullName>
+        <Address>Futoska ulica 201</Address>
+        <City>1</City>
+    </customer>
+    <customer id="103">
+        <FullName>Tamara Babic</FullName>
+        <Address>Mose Pijade</Address>
+        <City>2</City>
+    </customer>
+</customers>

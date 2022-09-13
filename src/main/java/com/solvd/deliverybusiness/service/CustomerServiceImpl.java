@@ -1,6 +1,7 @@
 package com.solvd.deliverybusiness.service;
 import com.solvd.deliverybusiness.dao.CustomerDao;
 import com.solvd.deliverybusiness.exception.DatabaseException;
+import com.solvd.deliverybusiness.exception.InvalidIDException;
 import com.solvd.deliverybusiness.model.Customer;
 import java.util.List;
 
@@ -23,9 +24,9 @@ public class CustomerServiceImpl implements ICustomerService{
     }
 
     @Override
-    public Customer getByID(int id) throws DatabaseException {
+    public Customer getByID(int id) throws InvalidIDException {
         if(id<1) {
-            throw new DatabaseException("Error");
+            throw new InvalidIDException("ID must be higher than 0.");
         }
             return this.customerDao.getByID(id);
     }
