@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Added XML file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IMenuDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/MenuDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadRestaurantXml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/MenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadCustomerXmlImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadRestaurantXmlImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/XmlValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xml/restaurant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xsd/customer.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xsd/restaurant.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadCustomerXml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadXmlImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/customer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/xml/customer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_City.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_City.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_Coupons.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_Coupons.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_Customer.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_Customer.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_MenuGroup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_MenuGroup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_MenuItem.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_MenuItem.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_MenuItemExtra.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_MenuItemExtra.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_OpeningHours.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_OpeningHours.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_Order.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_Order.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_OrderItem.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_OrderItem.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_OrderItemExtra.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_OrderItemExtra.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_OrderStatus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_OrderStatus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_Payment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_Payment.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_WeekDay.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_WeekDay.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_menu.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_menu.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deliverybusiness_restaurant.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/deliverybusiness_restaurant.sql" afterDir="false" />
-    </list>
+    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Added XML file and Validator for XML and XSD and Read XML to java class&#10;Added MenuDao and Service" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663097812630</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added XML file and Validator for XML and XSD and Read XML to java class&#10;Added MenuDao and Service">
+      <created>1663263212424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663263212424</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added XML file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added XML file" />
+    <MESSAGE value="Added XML file and Validator for XML and XSD and Read XML to java class&#10;Added MenuDao and Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added XML file and Validator for XML and XSD and Read XML to java class&#10;Added MenuDao and Service" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DeliveryBusiness$com_solvd_deliverybusiness_App.ic" NAME="com.solvd.deliverybusiness.App Coverage Results" MODIFIED="1663096258636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
