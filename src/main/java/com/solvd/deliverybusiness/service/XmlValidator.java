@@ -44,4 +44,30 @@ public class XmlValidator {
             log.error(e.getMessage());
         }
     }
+    public void validatePaymentXml(){
+        try{
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/payment.xsd"));
+            Source xmlFile = new StreamSource(new File("src/main/resources/xml/payment.xml"));
+            Validator validator = schema.newValidator();
+            validator.validate(xmlFile);
+            System.out.println(xmlFile.getSystemId() + " is valid");
+        }
+        catch (SAXException | IOException e){
+            log.error(e.getMessage());
+        }
+    }
+    public void validateMenuXml(){
+        try{
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/menu.xsd"));
+            Source xmlFile = new StreamSource(new File("src/main/resources/xml/menu.xml"));
+            Validator validator = schema.newValidator();
+            validator.validate(xmlFile);
+            System.out.println(xmlFile.getSystemId() + " is valid");
+        }
+        catch (SAXException | IOException e){
+            log.error(e.getMessage());
+        }
+    }
 }

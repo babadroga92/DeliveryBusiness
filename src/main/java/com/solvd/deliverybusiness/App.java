@@ -25,6 +25,8 @@ public class App {
             XmlValidator xmlValidator = new XmlValidator();
             xmlValidator.validateCustomerXml();
             xmlValidator.validateRestaurantXml();
+            xmlValidator.validatePaymentXml();
+            xmlValidator.validateMenuXml();
 
 
             Restaurant restaurant2 = new Restaurant(2, "Cas", true, "Srpski", 2);

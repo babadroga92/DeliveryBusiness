@@ -1,0 +1,20 @@
+<menus>
+    <menu>
+        <ID>1</ID>
+        <Name>Breakfast</Name>
+        <isActive>1</isActive>
+        <restaurant_id>1</restaurant_id>
+    </menu>
+    <menu>
+        <ID>2</ID>
+        <Name>Drinks</Name>
+        <isActive>1</isActive>
+        <restaurant_id>1</restaurant_id>
+    </menu>
+    <menu>
+        <ID>3</ID>
+        <Name>Dinner</Name>
+        <isActive>1</isActive>
+        <restaurant_id>2</restaurant_id>
+    </menu>
+</menus>

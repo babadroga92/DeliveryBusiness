@@ -1,0 +1,17 @@
+<payments>
+    <payment>
+        <ID>1</ID>
+        <Amount>13.99</Amount>
+        <Customer_ID>1</Customer_ID>
+    </payment>
+    <payment>
+        <ID>2</ID>
+        <Amount>11.99</Amount>
+        <Customer_ID>2</Customer_ID>
+    </payment>
+    <payment>
+        <ID>3</ID>
+        <Amount>17.99</Amount>
+        <Customer_ID>3</Customer_ID>
+    </payment>
+</payments>
