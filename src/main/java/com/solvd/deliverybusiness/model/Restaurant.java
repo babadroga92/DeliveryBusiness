@@ -61,6 +61,7 @@ public class Restaurant {
     @Override
     public String toString() {
         return "Restaurant{" +
+                "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", isActive=" + isActive +
                 ", description='" + description + '\'' +

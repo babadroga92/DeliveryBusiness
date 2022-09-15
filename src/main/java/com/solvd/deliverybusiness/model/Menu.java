@@ -2,16 +2,16 @@ package com.solvd.deliverybusiness.model;
 
 public class Menu {
     private int ID;
-    private String menu;
+    private String name;
     private boolean isActive;
     private int restaurantID;
 
     public Menu() {
     }
 
-    public Menu(int ID, String menu, boolean isActive, int restaurantID) {
+    public Menu(int ID, String name, boolean isActive, int restaurantID) {
         this.ID = ID;
-        this.menu = menu;
+        this.name = name;
         this.isActive = isActive;
         this.restaurantID = restaurantID;
     }
@@ -24,12 +24,12 @@ public class Menu {
         this.ID = ID;
     }
 
-    public String getMenu() {
-        return menu;
+    public String getName() {
+        return name;
     }
 
-    public void setMenu(String menu) {
-        this.menu = menu;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isActive() {
@@ -46,5 +46,15 @@ public class Menu {
 
     public void setRestaurantID(int restaurantID) {
         this.restaurantID = restaurantID;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", isActive=" + isActive +
+                ", restaurantID=" + restaurantID +
+                '}';
     }
 }

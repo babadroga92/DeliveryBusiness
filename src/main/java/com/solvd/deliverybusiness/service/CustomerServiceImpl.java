@@ -40,9 +40,9 @@ public class CustomerServiceImpl implements ICustomerService{
     }
 
     @Override
-    public void update(int id, Customer customer) throws DatabaseException {
+    public void update(int id, Customer customer) throws InvalidIDException, DatabaseException {
         if(id<1){
-            throw new DatabaseException("Error with ID");
+            throw new InvalidIDException("Error with ID");
         } else if (customer.getFullName()== null || customer.getAddress()==null)  {
             throw new DatabaseException("Error with fullName and address");
 

@@ -27,9 +27,9 @@ public class CustomerDao implements ICustomerDao {
             try {
                 ResultSet rez = ps.executeQuery();
                 while (rez.next()) {
-                    listaMusterija.add(new Customer(rez.getInt("ID"), rez.getString("fullName"), rez.getString("address"), rez.getInt("city")));
+                    listaMusterija.add(new Customer(rez.getInt("ID"), rez.getString("fullName"),
+                            rez.getString("address"), rez.getInt("city")));
                 }
-
             } catch (SQLException e) {
                 log.error(e.getMessage());
             }
@@ -41,73 +41,60 @@ public class CustomerDao implements ICustomerDao {
 
     @Override
     public Customer getByID(int id) {
-        {
             try {
-
                 String query = "Select * from Customer where ID=?";
                 PreparedStatement ps = connection.prepareStatement(query);
                 ps.setInt(1, id);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     return new Customer(rs.getInt("ID"), rs.getString("fullName"), rs.getString("address"), rs.getInt("city"));
-
                 }
             } catch (SQLException ex) {
                 log.error(ex.getMessage());
             }
-        }
         return null;
     }
 
     @Override
     public void create(Customer customer) {
-
         try {
-
             String query = "Insert into Customer(fullName, address, city) values(?,?,?) ";
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, customer.getFullName());
             ps.setString(2, customer.getAddress());
             ps.setInt(3, customer.getCity());
             ps.executeUpdate();
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
-
     }
 
     @Override
     public void update(int id, Customer customer) {
-
         try {
             String query = "Update Customer set fullName=? where ID=?";
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1,customer.getFullName());
+            ps.setString(1, customer.getFullName());
             ps.setInt(2, id);
             ps.executeUpdate();
-        } catch (SQLException ex) {
+        }
+        catch (SQLException ex) {
             log.error(ex.getMessage());
         }
-
     }
 
     @Override
     public String delete(int id) {
-        {
             try {
-
                 String query = "Delete from Customer where ID=?";
                 PreparedStatement ps = connection.prepareStatement(query);
                 ps.setInt(1, id);
                 ps.executeUpdate();
                 return "Customer deleted";
-            } catch (SQLException ex) {
+            }
+            catch (SQLException ex) {
                 log.error("Error" + ex.getMessage());
                 return "Customer removed";
             }
-        }
     }
-
 }

@@ -22,8 +22,7 @@ public class OrderDao implements IOrderDao{
     }
 
     @Override
-    public List<Order> getAll()
-    {
+    public List<Order> getAll() {
         List<Order> listaNarudzbe = new ArrayList<>();
         String query = "Select * from deliverybusiness.Order";
         try {
@@ -38,7 +37,6 @@ public class OrderDao implements IOrderDao{
                             rez.getDouble("price"),
                             rez.getString("note"), null, null, 0, 0));
                 }
-
             } catch (SQLException e) {
                 log.error(e.getMessage());
             }

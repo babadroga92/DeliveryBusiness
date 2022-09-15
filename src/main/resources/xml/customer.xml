@@ -1,16 +1,18 @@
 <customers>
-    <customer id="101">
-
+    <customer>
+        <ID>1</ID>
         <FullName>Ljubisa Coric</FullName>
         <Address>Glavna 78</Address>
         <City>1</City>
     </customer>
-    <customer id="102">
+    <customer>
+        <ID>2</ID>
         <FullName>Vladimir Dobrijevic</FullName>
         <Address>Futoska ulica 201</Address>
         <City>1</City>
     </customer>
-    <customer id="103">
+    <customer>
+        <ID>3</ID>
         <FullName>Tamara Babic</FullName>
         <Address>Mose Pijade</Address>
         <City>2</City>

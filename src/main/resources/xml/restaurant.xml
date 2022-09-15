@@ -1,0 +1,17 @@
+<restaurants>
+    <restaurant>
+        <ID>1</ID>
+        <Name>Kombinat</Name>
+        <City_ID>1</City_ID>
+    </restaurant>
+    <restaurant>
+        <ID>2</ID>
+        <Name>Trojka</Name>
+        <City_ID>1</City_ID>
+    </restaurant>
+    <restaurant>
+        <ID>3</ID>
+        <Name>The Camelot</Name>
+        <City_ID>1</City_ID>
+    </restaurant>
+</restaurants>

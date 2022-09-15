@@ -6,11 +6,12 @@ import java.sql.SQLException;
 public class DatabaseConnection {
 
     String connectionURL = "jdbc:mysql://localhost:3306/deliverybusiness";
-
+    String username = "root";
+    String password = "Babadroga_92";
     public DatabaseConnection() {
     }
 
     public Connection createConnection() throws SQLException {
-        return DriverManager.getConnection(connectionURL, "root", "Babadroga_92");
+        return DriverManager.getConnection(connectionURL, username, password);
     }
 }

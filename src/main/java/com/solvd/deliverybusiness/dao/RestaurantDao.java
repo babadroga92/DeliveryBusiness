@@ -76,7 +76,6 @@ public class RestaurantDao implements IRestaurantDao{
     @Override
     public void create(Restaurant restaurant) {
         try {
-
             String query = "Insert into Restaurant(Name, is_active, Description, City_ID) values(?,?,?,?) ";
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, restaurant.getName());
@@ -85,12 +84,9 @@ public class RestaurantDao implements IRestaurantDao{
             ps.setInt(4, restaurant.getCityID());
             ps.executeUpdate();
         }
-        catch (SQLException ex)
-        {
+        catch (SQLException ex) {
             log.error(ex.getMessage());
         }
-
-
     }
     @Override
     public void update(int id, Restaurant restaurant) {
@@ -107,9 +103,7 @@ public class RestaurantDao implements IRestaurantDao{
     }
     @Override
     public String delete(int id) {
-        {
             try {
-
                 String query = "Delete from Restaurant where ID=?";
                 PreparedStatement ps = connection.prepareStatement(query);
                 ps.setInt(1, id);
@@ -119,7 +113,6 @@ public class RestaurantDao implements IRestaurantDao{
                 log.error("Error" + ex.getMessage());
                 return "Restaurant removed";
             }
-        }
     }
-    }
+}
 
