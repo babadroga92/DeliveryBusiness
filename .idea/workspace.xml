@@ -4,59 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Added XML validator for menu and payment">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadJsonServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/city.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/customer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/menu.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/order.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/json/restaurant.json" afterDir="false" />
+    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Created 5 json files&#10;Created service and implemented them in main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/ICustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/ICustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IMenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IMenuDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IOrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IPaymentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IPaymentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IRestaurantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/IRestaurantDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/MenuDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/PaymentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/PaymentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Coupons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Coupons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuItemExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/MenuItemExtra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OpeningHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OpeningHours.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderItemExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderItemExtra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/WeekDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/model/WeekDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IMenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IPaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IPaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadCustomerXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadXml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IReadRestaurantXml.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IRestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/IRestaurantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/PaymentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadCustomerXmlImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadCustomerXmlImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadRestaurantXmlImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/ReadRestaurantXmlImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/RestaurantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/RestaurantServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/XmlValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/service/XmlValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663268913995</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created 5 json files&#10;Created service and implemented them in main">
+      <created>1663776124161</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663776124161</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +148,8 @@
     <MESSAGE value="Added XML file and Validator for XML and XSD and Read XML to java class&#10;Added MenuDao and Service" />
     <MESSAGE value="Added .idea to .gitignore" />
     <MESSAGE value="Added XML validator for menu and payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added XML validator for menu and payment" />
+    <MESSAGE value="Created 5 json files&#10;Created service and implemented them in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created 5 json files&#10;Created service and implemented them in main" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DeliveryBusiness$com_solvd_deliverybusiness_App.ic" NAME="com.solvd.deliverybusiness.App Coverage Results" MODIFIED="1663096258636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -22,7 +22,7 @@ public class RestaurantDao implements IRestaurantDao {
 
     private String insertIntoRestaurant = "Insert into Restaurant(Name, is_active, Description, City_ID) values(?,?,?,?) ";
 
-    private String updateRestaurant = "Update deliverybusiness.Restaurant set Name=? where ID=?";
+    private String updateRestaurant = "Update deliverybusiness.Restaurant set Name=? and is_active=? and Description=? and City_ID=? where ID=?";
 
     private String deleteFromRestaurant = "Delete from Restaurant where ID=?";
 
@@ -49,36 +49,24 @@ public class RestaurantDao implements IRestaurantDao {
     }
     @Override
     public List<Restaurant> getAllRestaurants() {
-        List<Restaurant> listaRestorana = new ArrayList<>();
         try {
             PreparedStatement ps = this.createPreparedStatement(getGetAllFromRestaurant());
-            ResultSet rez = ps.executeQuery();
-            while (rez.next()) {
-                listaRestorana.add(new Restaurant(rez.getInt("ID"), rez.getString("Name"),
-                        rez.getBoolean("is_active"),
-                        rez.getString("description"), rez.getInt("City_ID")));
-            }
+            return listaRest(ps);
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
-        return listaRestorana;
+        return null;
     }
     @Override
     public List<Restaurant> getAllRestaurantsFromCity(String city) {
-        List<Restaurant> listaRestorana = new ArrayList<>();
         try {
             PreparedStatement ps = this.createPreparedStatement(getGetAllRestaurantsFromCity());
             ps.setString(1, city);
-            ResultSet rez = ps.executeQuery();
-            while (rez.next()) {
-                listaRestorana.add(new Restaurant(rez.getInt("ID"), rez.getString("Name"),
-                        rez.getBoolean("is_active"),
-                        rez.getString("description"), rez.getInt("City_ID")));
-            }
+            return listaRest(ps);
         } catch (SQLException e) {
             log.error(e.getMessage());
         }
-        return listaRestorana;
+        return null;
     }
     @Override
     public Restaurant getRestaurantsById(int id) {
@@ -87,12 +75,7 @@ public class RestaurantDao implements IRestaurantDao {
     @Override
     public void createRestaurant(Restaurant restaurant) {
         try {
-            PreparedStatement ps = this.createPreparedStatement(getInsertIntoRestaurant());
-            ps.setString(1, restaurant.getName());
-            ps.setBoolean(2, restaurant.isActive());
-            ps.setString(3, restaurant.getDescription());
-            ps.setInt(4, restaurant.getCityID());
-            ps.executeUpdate();
+            psSet(getInsertIntoRestaurant(), restaurant, 0);
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
@@ -101,10 +84,7 @@ public class RestaurantDao implements IRestaurantDao {
     @Override
     public void updateRestaurant(int id, Restaurant restaurant) {
         try {
-            PreparedStatement ps = this.createPreparedStatement(getUpdateRestaurant());
-            ps.setString(1, restaurant.getName());
-            ps.setInt(2, id);
-            ps.executeUpdate();
+            psSet(getUpdateRestaurant(), restaurant,id);
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
@@ -121,8 +101,31 @@ public class RestaurantDao implements IRestaurantDao {
             return "Restaurant removed";
         }
     }
+    private void psSet(String query, Restaurant restaurant, int id) throws SQLException{
+        PreparedStatement ps = this.createPreparedStatement(query);
+        ps.setString(1, restaurant.getName());
+        ps.setBoolean(2, restaurant.isActive());
+        ps.setString(3, restaurant.getDescription());
+        ps.setInt(4, restaurant.getCityID());
+        if(id!=0){
+            ps.setInt(5,id);
+        }
+
+        ps.executeUpdate();
+    }
     private PreparedStatement createPreparedStatement(String query) throws SQLException{
         return connection.prepareStatement(query);
+    }
+
+    private List<Restaurant> listaRest(PreparedStatement ps) throws SQLException {
+        ResultSet rez = ps.executeQuery();
+        List<Restaurant> listaRestorana = new ArrayList<>();
+        while (rez.next()) {
+            listaRestorana.add(new Restaurant(rez.getInt("ID"), rez.getString("Name"),
+                    rez.getBoolean("is_active"),
+                    rez.getString("description"), rez.getInt("City_ID")));
+        }
+        return listaRestorana;
     }
 }
 
