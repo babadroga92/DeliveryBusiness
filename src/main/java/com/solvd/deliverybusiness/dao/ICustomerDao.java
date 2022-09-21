@@ -5,10 +5,10 @@ import com.solvd.deliverybusiness.model.Customer;
 import java.util.List;
 
 public interface ICustomerDao {
-    public List<Customer> getAll();
-    public Customer getByID(int id);
-    public void create(Customer customer);
-    public void update(int id, Customer customer);
-    public String delete(int id);
+    public List<Customer> getAllCustomers();
+    public Customer getCustomerByID(int id);
+    public void createCustomer(Customer customer);
+    public void updateCustomer(int id, Customer customer);
+    public String deleteCustomer(int id);
 
 }

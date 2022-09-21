@@ -1,8 +1,6 @@
 package com.solvd.deliverybusiness.dao;
 
-import com.solvd.deliverybusiness.model.Customer;
 import com.solvd.deliverybusiness.model.Menu;
-import com.solvd.deliverybusiness.model.Order;
 import com.solvd.deliverybusiness.model.Restaurant;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,46 +12,64 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuDao implements IMenuDao{
+public class MenuDao implements IMenuDao {
     private Connection connection;
+
+    private String getAllFromMenu = "Select * from deliverybusiness.Menu";
+    private String getAllFromMenuWithId = "Select * from businessdelivery.Menu where ID=?";
+    private String insertIntoMenu = "Insert into deliverybusiness.Menu(Name, isActive, restaurant_id) values(?,?,?) ";
+    private String updateMenu = "Update deliverybusiness.Menu set Name=? and isActive=? where ID=?";
+    private String deleteFromMenu = "Delete from deliverybusiness.Menu where ID=?";
+    private String getMenuFromActiveRestaurants = "Select * from deliverybusiness.Menu where restaurant_id=? and isActive=?";
     private static Logger log = LogManager.getLogger(Menu.class.getName());
 
     public MenuDao(Connection connection) {
         this.connection = connection;
     }
 
+    public String getGetAllFromMenu() {
+        return getAllFromMenu;
+    }
+
+    public String getGetAllFromMenuWithId() {
+        return getAllFromMenuWithId;
+    }
+
+    public String getInsertIntoMenu() {
+        return insertIntoMenu;
+    }
+
+    public String getUpdateMenu() {
+        return updateMenu;
+    }
+
+    public String getDeleteFromMenu() {
+        return deleteFromMenu;
+    }
+
+    public String getGetMenuFromActiveRestaurants() {
+        return getMenuFromActiveRestaurants;
+    }
 
     @Override
-    public List<Menu> getAll() {
-        List<Menu> listaMenija = new ArrayList<>();
-        String query = "Select * from deliverybusiness.Menu";
+    public List<Menu> getAllMenu() {
         try {
-            PreparedStatement ps = connection.prepareStatement(query);
-            try {
-                ResultSet rez = ps.executeQuery();
-                while (rez.next()) {
-                    listaMenija.add(new Menu(rez.getInt("ID"), rez.getString("Name"),
-                            rez.getBoolean("isActive"), rez.getInt("restaurant_id")));
-                }
-            } catch (SQLException e) {
-                log.error(e.getMessage());
-            }
+            PreparedStatement ps = this.createPreparedStatement(getGetAllFromMenu());
+            return this.getMenuList(ps);
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
-        return listaMenija;
+        return null;
     }
 
-
     @Override
-    public Menu getByID(int id) {
+    public Menu getMenuByID(int id) {
         try {
-            String query = "Select * from businessdelivery.Menu where ID=?";
-            PreparedStatement ps = connection.prepareStatement(query);
+            PreparedStatement ps = this.createPreparedStatement(getGetAllFromMenuWithId());
             ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return new Menu(rs.getInt("ID"), rs.getString("Name"), rs.getBoolean("isActive"), rs.getInt("restaurant_id"));
+            ResultSet rez = ps.executeQuery();
+            if (rez.next()) {
+                return new Menu(rez.getInt("ID"), rez.getString("Name"), rez.getBoolean("isActive"), rez.getInt("restaurant_id"));
             }
         } catch (SQLException ex) {
             log.error(ex.getMessage());
@@ -62,43 +78,31 @@ public class MenuDao implements IMenuDao{
     }
 
     @Override
-    public void create(Menu menu) {
+    public void createMenu(Menu menu) {
         try {
-            String query = "Insert into deliverybusiness.Menu(Name, isActive, restaurant_id) values(?,?,?) ";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, menu.getName());
-            ps.setBoolean(2, menu.isActive());
-            ps.setInt(3, menu.getRestaurantID());
-            ps.executeUpdate();
+            psSet(menu, menu.getRestaurantID(), getInsertIntoMenu());
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
     }
 
     @Override
-    public void update(int id, Menu menu) {
+    public void updateMenu(int id, Menu menu) {
         try {
-            String query = "Update deliverybusiness.Menu set Name=? where ID=?";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, menu.getName());
-            ps.setInt(2, id);
-            ps.executeUpdate();
-        }
-        catch (SQLException ex) {
+            psSet(menu, id, getUpdateMenu());
+        } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
     }
 
     @Override
-    public String delete(int id) {
+    public String deleteMenu(int id) {
         try {
-            String query = "Delete from deliverybusiness.Menu where ID=?";
-            PreparedStatement ps = connection.prepareStatement(query);
+            PreparedStatement ps = this.createPreparedStatement(getDeleteFromMenu());
             ps.setInt(1, id);
             ps.executeUpdate();
             return "Menu deleted";
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             log.error("Error" + ex.getMessage());
             return "Menu removed";
         }
@@ -107,19 +111,31 @@ public class MenuDao implements IMenuDao{
     @Override
     public List<Menu> restaurantMenu(Restaurant restaurant) {
         try {
-            String query = "Select * from deliverybusiness.Menu where restaurant_id=? and isActive=?";
-            PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, restaurant.getID());
+            PreparedStatement ps = this.createPreparedStatement(getGetMenuFromActiveRestaurants());
+            ps.setInt(1, restaurant.getId());
             ps.setBoolean(2, restaurant.isActive());
-            ResultSet rs = ps.executeQuery();
-            List<Menu> listaMenija = new ArrayList<>();
-            if (rs.next()) {
-                listaMenija.add(new Menu(rs.getInt("ID"), rs.getString("Name"), rs.getBoolean("isActive"), rs.getInt("restaurant_id")));
-            }
-            return listaMenija;
+            return this.getMenuList(ps);
         } catch (SQLException ex) {
             log.error(ex.getMessage());
         }
         return null;
+    }
+    private PreparedStatement createPreparedStatement(String query) throws SQLException{
+       return connection.prepareStatement(query);
+    }
+    private List<Menu> getMenuList(PreparedStatement ps) throws SQLException{
+        ResultSet rez = ps.executeQuery();
+        List<Menu> listaMenija = new ArrayList<>();
+        if (rez.next()) {
+            listaMenija.add(new Menu(rez.getInt("ID"), rez.getString("Name"), rez.getBoolean("isActive"), rez.getInt("restaurant_id")));
+        }
+        return listaMenija;
+    }
+    private void psSet (Menu menu, int id, String query) throws SQLException{
+        PreparedStatement ps = this.createPreparedStatement(query);
+        ps.setString(1, menu.getName());
+        ps.setBoolean(2, menu.isActive());
+        ps.setInt(3, id);
+        ps.executeUpdate();
     }
 }

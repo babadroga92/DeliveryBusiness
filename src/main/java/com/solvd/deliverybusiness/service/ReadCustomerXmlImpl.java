@@ -1,8 +1,16 @@
 package com.solvd.deliverybusiness.service;
 import com.solvd.deliverybusiness.model.Customer;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
+import com.solvd.deliverybusiness.model.Restaurant;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
+
+import javax.xml.stream.*;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
@@ -13,12 +21,46 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadCustomerXmlImpl implements IReadCustomerXml {
+public class ReadCustomerXmlImpl implements IReadXml {
+    private static Logger log = LogManager.getLogger(ReadRestaurantXmlImpl.class);
+    private String path;
+    public String getPath() {
+
+        return path;
+    }
+
+    public ReadCustomerXmlImpl(String path) {
+        this.path = path;
+    }
+
+
+
     @Override
-    public void readXml() throws FileNotFoundException, XMLStreamException {
+    public void readXml() throws FileNotFoundException, XMLStreamException, JAXBException {
+        Configurator.setLevel(log.getName(), Level.INFO);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
+        List<Customer> listaMusterija = new ArrayList<>();
+        Unmarshaller um = jaxbContext.createUnmarshaller();
+        XMLInputFactory xmlFactory = XMLInputFactory.newInstance();
+        XMLStreamReader reader = xmlFactory.createXMLStreamReader(new FileReader(this.path));
+        while (reader.hasNext() && (!reader.isStartElement() || !reader.getLocalName().equals("customer"))) {
+            reader.next();
+        }
+        while (reader.getEventType() == XMLStreamConstants.START_ELEMENT) {
+            JAXBElement<Customer> boolElement = um.unmarshal(reader, Customer.class);
+            Customer cust = boolElement.getValue();
+            listaMusterija.add(cust);
+            if (reader.getEventType() == XMLStreamConstants.CHARACTERS) {
+                reader.next();
+            }
+        }
+        listaMusterija.forEach(s -> log.info(s));
+    }
+}
+       /* Configurator.setLevel(log.getName(), Level.INFO);
         List<Customer> listaMusterija = new ArrayList<>();
         Customer customer = null;
-        File file = new File("src/main/resources/xml/customer.xml");
+        File file = new File(getPath());
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLEventReader reader = factory.createXMLEventReader(new FileReader(file));
         while (reader.hasNext()) {
@@ -28,16 +70,16 @@ public class ReadCustomerXmlImpl implements IReadCustomerXml {
                 if(startElement.getName().getLocalPart().equalsIgnoreCase("customer")) {
                     customer = new Customer();
                 }
-                if (startElement.getName().getLocalPart().equalsIgnoreCase("ID")) {
-                    customer.setID(Integer.parseInt(((Characters) reader.nextEvent()).getData()));
+              /* if (startElement.getName().getLocalPart().equalsIgnoreCase("ID")) {
+                  customer.setID(Integer.parseInt(((Characters) reader.nextEvent()).getData()));
                 }
                 if (startElement.getName().getLocalPart().equalsIgnoreCase("FullName")) {
                     customer.setFullName(((Characters) reader.nextEvent()).getData());
-                }
+               }
                 if (startElement.getName().getLocalPart().equalsIgnoreCase("Address")) {
-                    customer.setAddress(((Characters) reader.nextEvent()).getData());
-                }
-                if (startElement.getName().getLocalPart().equalsIgnoreCase("City")) {
+                   customer.setAddress(((Characters) reader.nextEvent()).getData());
+               }
+               if (startElement.getName().getLocalPart().equalsIgnoreCase("City")) {
                     customer.setCity(Integer.parseInt(((Characters) reader.nextEvent()).getData()));
                 }
             }
@@ -48,8 +90,6 @@ public class ReadCustomerXmlImpl implements IReadCustomerXml {
                 }
             }
         }
-        for (Customer customer1 : listaMusterija) {
-            System.out.println(customer1);
-        }
-    }
-}
+        listaMusterija.forEach(s->log.info(s));
+        } */
+

@@ -1,25 +1,25 @@
 package com.solvd.deliverybusiness.model;
 
 public class MenuGroup {
-    private int ID;
+    private int id;
     private String name;
     private int menuID;
 
     public MenuGroup() {
     }
 
-    public MenuGroup(int ID, String name, int menuID) {
-        this.ID = ID;
+    public MenuGroup(int id, String name, int menuID) {
+        this.id = id;
         this.name = name;
         this.menuID = menuID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

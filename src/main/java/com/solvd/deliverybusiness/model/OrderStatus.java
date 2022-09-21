@@ -1,23 +1,23 @@
 package com.solvd.deliverybusiness.model;
 
 public class OrderStatus {
-    private int ID;
+    private int id;
     private String name;
 
     public OrderStatus() {
     }
 
-    public OrderStatus(int ID, String name) {
-        this.ID = ID;
+    public OrderStatus(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

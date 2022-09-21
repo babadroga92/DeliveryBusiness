@@ -1,6 +1,4 @@
 package com.solvd.deliverybusiness.service;
-
-
 import com.solvd.deliverybusiness.dao.OrderDao;
 import com.solvd.deliverybusiness.model.Customer;
 import com.solvd.deliverybusiness.model.Order;
@@ -16,34 +14,35 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public List<Order> getAll() {
+    public List<Order> getAllOrders() {
 
-        return this.orderDao.getAll();
+        return this.orderDao.getAllOrders();
     }
 
     @Override
-    public Order getByID(int id) {
-        return null;
+    public Order getOrderByID(int id) {
+        return this.orderDao.getOrderByID(id);
     }
 
     @Override
-    public void create(Order order) {
-        this.orderDao.create(order);
+    public void createOrder(Order order) {
+        this.orderDao.createOrder(order);
     }
 
     @Override
-    public void update(int id, Order order) {
-
+    public void updateOrder(int id, Order order) {
+        this.orderDao.updateOrder(id, order);
     }
 
     @Override
-    public String delete(int id) {
+    public String deleteOrder(int id) {
 
-        return this.orderDao.delete(id);
+        return this.orderDao.deleteOrder(id);
     }
 
     @Override
     public List<Order> orderHistoryCustomer(Customer customer) {
+
         return this.orderDao.orderHistoryCustomer(customer);
     }
 

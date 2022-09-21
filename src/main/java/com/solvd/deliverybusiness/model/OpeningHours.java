@@ -3,7 +3,7 @@ package com.solvd.deliverybusiness.model;
 import java.sql.Date;
 
 public class OpeningHours {
-    private int ID;
+    private int id;
     private Date fromTime;
     private Date toTime;
     private int weekDayID;
@@ -12,20 +12,20 @@ public class OpeningHours {
     public OpeningHours() {
     }
 
-    public OpeningHours(int ID, Date fromTime, Date toTime, int weekDayID, int restaurantID) {
-        this.ID = ID;
+    public OpeningHours(int id, Date fromTime, Date toTime, int weekDayID, int restaurantID) {
+        this.id = id;
         this.fromTime = fromTime;
         this.toTime = toTime;
         this.weekDayID = weekDayID;
         this.restaurantID = restaurantID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getFromTime() {

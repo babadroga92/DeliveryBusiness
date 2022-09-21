@@ -1,25 +1,26 @@
 package com.solvd.deliverybusiness.model;
 
 public class City {
-    private int ID;
+    private int id;
     private String name;
     private String zipCode;
-    public City(){
+
+    public City() {
 
     }
 
-    public City(int ID, String name, String zipCode) {
-        this.ID = ID;
+    public City(int id, String name, String zipCode) {
+        this.id = id;
         this.name = name;
         this.zipCode = zipCode;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -36,5 +37,14 @@ public class City {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                '}';
     }
 }

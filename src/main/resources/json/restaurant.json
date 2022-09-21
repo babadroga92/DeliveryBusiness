@@ -1,0 +1,16 @@
+[
+  {
+    "id": 82,
+    "Name": "Bahama Breeze",
+    "is_active": true,
+    "Description": "Hawaiian restaurant",
+    "City_ID": 1
+  },
+  {
+    "id": 83,
+    "Name": "Koko Bong",
+    "is_active": true,
+    "Description": "Jamaican restaurant",
+    "City_ID": 1
+  }
+]

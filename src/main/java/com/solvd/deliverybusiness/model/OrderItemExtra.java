@@ -1,7 +1,7 @@
 package com.solvd.deliverybusiness.model;
 
 public class OrderItemExtra {
-    private int ID;
+    private int id;
     private String quantity;
     private int orderItemID;
     private int menuItemID;
@@ -10,20 +10,20 @@ public class OrderItemExtra {
     public OrderItemExtra() {
     }
 
-    public OrderItemExtra(int ID, String quantity, int orderItemID, int menuItemID, int menuItemExtraID) {
-        this.ID = ID;
+    public OrderItemExtra(int id, String quantity, int orderItemID, int menuItemID, int menuItemExtraID) {
+        this.id = id;
         this.quantity = quantity;
         this.orderItemID = orderItemID;
         this.menuItemID = menuItemID;
         this.menuItemExtraID = menuItemExtraID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getQuantity() {

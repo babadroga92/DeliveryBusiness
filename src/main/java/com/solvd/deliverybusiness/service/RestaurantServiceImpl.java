@@ -13,35 +13,35 @@ public class RestaurantServiceImpl implements IRestaurantService{
     }
 
     @Override
-    public List<Restaurant> getAll() {
-        return this.restaurantDao.getAll();
+    public List<Restaurant> getAllRestaurants() {
+        return this.restaurantDao.getAllRestaurants();
     }
 
     @Override
-    public List<Restaurant> getAllFromCity(String city) {
-        return this.restaurantDao.getAllFromCity(city);
+    public List<Restaurant> getAllRestaurantsFromCity(String city) {
+        return this.restaurantDao.getAllRestaurantsFromCity(city);
     }
 
     @Override
-    public Restaurant getByID(int id) {
+    public Restaurant getRestaurantsByID(int id) {
         return null;
     }
 
     @Override
-    public void create(Restaurant restaurant) {
-        this.restaurantDao.create(restaurant);
+    public void createRestaurant(Restaurant restaurant) {
+        this.restaurantDao.createRestaurant(restaurant);
     }
 
     @Override
-    public void update(int id, Restaurant restaurant) {
+    public void updateRestaurant(int id, Restaurant restaurant) {
 
     }
     @Override
-    public String delete(int id) throws DatabaseException {
+    public String deleteRestaurant(int id) throws DatabaseException {
             if(id<1) {
                 throw new DatabaseException("Error");
             }
-            return this.restaurantDao.delete(id);
+            return this.restaurantDao.deleteRestaurant(id);
         }
     }
 

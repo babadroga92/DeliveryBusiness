@@ -19,42 +19,42 @@ public class CustomerServiceImpl implements ICustomerService{
     }
 
     @Override
-    public List<Customer> getAll() {
-        return this.customerDao.getAll();
+    public List<Customer> getAllCustomers() {
+        return this.customerDao.getAllCustomers();
     }
 
     @Override
-    public Customer getByID(int id) throws InvalidIDException {
+    public Customer getCustomerByID(int id) throws InvalidIDException {
         if(id<1) {
             throw new InvalidIDException("ID must be higher than 0.");
         }
-            return this.customerDao.getByID(id);
+            return this.customerDao.getCustomerByID(id);
     }
 
     @Override
-    public void create(Customer customer) throws DatabaseException {
+    public void createCustomer(Customer customer) throws DatabaseException {
         if (customer.getFullName()== null || customer.getAddress()==null)  {
             throw new DatabaseException("Error with fullName or address");
         }
-        this.customerDao.create(customer);
+        this.customerDao.createCustomer(customer);
     }
 
     @Override
-    public void update(int id, Customer customer) throws InvalidIDException, DatabaseException {
+    public void updateCustomer(int id, Customer customer) throws InvalidIDException, DatabaseException {
         if(id<1){
             throw new InvalidIDException("Error with ID");
         } else if (customer.getFullName()== null || customer.getAddress()==null)  {
             throw new DatabaseException("Error with fullName and address");
 
         }
-            this.customerDao.update(id, customer);
+            this.customerDao.updateCustomer(id, customer);
     }
 
     @Override
-    public String delete(int id) throws DatabaseException {
+    public String deleteCustomer(int id) throws DatabaseException {
         if(id<1) {
             throw new DatabaseException("Error");
         }
-            return this.customerDao.delete(id);
+            return this.customerDao.deleteCustomer(id);
     }
 }

@@ -3,7 +3,7 @@ package com.solvd.deliverybusiness.model;
 import java.sql.Date;
 
 public class Order {
-    private int ID;
+    private int id;
     private Date orderDate;
     private Date preparedDate;
     private Date takenOverDate;
@@ -33,8 +33,8 @@ public class Order {
     }
 
 
-    public Order(int ID, Date orderDate, Date preparedDate, Date takenOverDate, boolean isPaid, double price, String note, Restaurant restaurant, Customer customer, int couponsID, int orderStatusID) {
-        this.ID = ID;
+    public Order(int id, Date orderDate, Date preparedDate, Date takenOverDate, boolean isPaid, double price, String note, Restaurant restaurant, Customer customer, int couponsID, int orderStatusID) {
+        this.id = id;
         this.orderDate = orderDate;
         this.preparedDate = preparedDate;
         this.takenOverDate = takenOverDate;
@@ -47,12 +47,12 @@ public class Order {
         this.orderStatusID = orderStatusID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getOrderDate() {
@@ -138,7 +138,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", isPaid=" + isPaid +
                 ", price=" + price +
                 ", note='" + note + '\'' +

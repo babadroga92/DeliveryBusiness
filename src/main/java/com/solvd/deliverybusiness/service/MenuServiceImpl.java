@@ -1,6 +1,5 @@
 package com.solvd.deliverybusiness.service;
 
-import com.solvd.deliverybusiness.dao.CustomerDao;
 import com.solvd.deliverybusiness.dao.MenuDao;
 import com.solvd.deliverybusiness.model.Menu;
 import com.solvd.deliverybusiness.model.Restaurant;
@@ -18,33 +17,35 @@ public class MenuServiceImpl implements IMenuService{
     }
 
     @Override
-    public List<Menu> getAll() {
-        return this.menuDao.getAll();
+    public List<Menu> getAllMenu() {
+        return this.menuDao.getAllMenu();
     }
 
     @Override
-    public Menu getByID(int id) {
-        return this.menuDao.getByID(id);
+    public Menu getMenuByID(int id) {
+        return this.menuDao.getMenuByID(id);
     }
 
     @Override
-    public void create(Menu menu) {
-        this.menuDao.create(menu);
+    public void createMenu(Menu menu) {
+        this.menuDao.createMenu(menu);
     }
 
     @Override
-    public void update(int id, Menu menu) {
-        this.menuDao.update(id, menu);
+    public void updateMenu(int id, Menu menu) {
+        this.menuDao.updateMenu(id, menu);
 
     }
 
     @Override
-    public String delete(int id) {
-        return this.menuDao.delete(id);
+    public String deleteMenu(int id) {
+
+        return this.menuDao.deleteMenu(id);
     }
 
     @Override
     public List<Menu> restaurantMenu(Restaurant restaurant) {
+
         return this.menuDao.restaurantMenu(restaurant);
     }
 }

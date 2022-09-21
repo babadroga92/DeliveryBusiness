@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "OrderDate": null,
+    "PreparedDate": null,
+    "TakenOverDate": null,
+    "isPaid": true,
+    "Price": 17.99,
+    "Note": null,
+    "restaurant_ID": 1,
+    "Customer_ID": 1,
+    "Coupons_ID": 1,
+    "OrderStatus_ID": 1
+  },
+  {
+    "id": 2,
+    "OrderDate": null,
+    "PreparedDate": null,
+    "TakenOverDate": null,
+    "isPaid": true,
+    "Price": 15.99,
+    "Note": null,
+    "restaurant_ID": 1,
+    "Customer_ID": 1,
+    "Coupons_ID": 1,
+    "OrderStatus_ID": 1
+  }
+]

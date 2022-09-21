@@ -1,7 +1,8 @@
 package com.solvd.deliverybusiness.service;
-import com.solvd.deliverybusiness.dao.CustomerDao;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -16,58 +17,35 @@ import java.io.IOException;
 public class XmlValidator {
     private static Logger log = LogManager.getLogger(XmlValidator.class.getName());
 
+    private String xsdPath;
 
-    public void validateCustomerXml() {
-        try {
-            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/customer.xsd"));
-            Source xmlFile = new StreamSource(new File("src/main/resources/xml/customer.xml"));
-            Validator validator = schema.newValidator();
-            validator.validate(xmlFile);
-            System.out.println(xmlFile.getSystemId() + " is valid");
-        }
-        catch (SAXException | IOException e){
-            log.error(e.getMessage());
-        }
+    private String xmlPath;
+
+    public XmlValidator() {
     }
 
-    public void validateRestaurantXml() {
-        try {
-            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/restaurant.xsd"));
-            Source xmlFile = new StreamSource(new File("src/main/resources/xml/restaurant.xml"));
-            Validator validator = schema.newValidator();
-            validator.validate(xmlFile);
-            System.out.println(xmlFile.getSystemId() + " is valid");
-        }
-        catch (SAXException | IOException e){
-            log.error(e.getMessage());
-        }
+    public void xsdXmlValidation(String xsdPath, String xmlPath) throws SAXException, IOException {
+        Configurator.setLevel(log.getName(), Level.INFO);
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = schemaFactory.newSchema(new File(xsdPath));
+        Source xmlFile = new StreamSource(new File(xmlPath));
+        Validator validator = schema.newValidator();
+        validator.validate(xmlFile);
+        log.info(xmlFile.getSystemId() + " is valid");
     }
-    public void validatePaymentXml(){
+
+    /*public void anotherExampleXsdXml(){
         try{
-            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/payment.xsd"));
-            Source xmlFile = new StreamSource(new File("src/main/resources/xml/payment.xml"));
-            Validator validator = schema.newValidator();
-            validator.validate(xmlFile);
-            System.out.println(xmlFile.getSystemId() + " is valid");
-        }
-        catch (SAXException | IOException e){
-            log.error(e.getMessage());
-        }
-    }
-    public void validateMenuXml(){
-        try{
-            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            xsdXmlValidation(xsdPath, xmlPath);
+          NOTE FOR ME  -  ANOTHER WAY OF SOLVING THE PROBLEM
+          SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = schemaFactory.newSchema(new File("src/main/resources/xsd/menu.xsd"));
             Source xmlFile = new StreamSource(new File("src/main/resources/xml/menu.xml"));
             Validator validator = schema.newValidator();
             validator.validate(xmlFile);
-            System.out.println(xmlFile.getSystemId() + " is valid");
         }
         catch (SAXException | IOException e){
             log.error(e.getMessage());
         }
-    }
+    }*/
 }

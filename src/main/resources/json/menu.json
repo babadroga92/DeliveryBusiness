@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 1,
+    "Name": "Branch Menu",
+    "isActive": true,
+    "restaurant_id": 1
+  },
+  {
+    "ID": 1,
+    "Name": "Snack Menu",
+    "isActive": true,
+    "restaurant_id": 1
+  }
+]

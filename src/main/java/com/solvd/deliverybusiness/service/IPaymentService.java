@@ -5,10 +5,10 @@ import com.solvd.deliverybusiness.model.Payment;
 import java.util.List;
 
 public interface IPaymentService {
-    public List<Payment> getAll();
-    public List<Payment> getAllByCustomer(String customer);
-    public Payment getByID(int id);
-    public void create(Payment payment);
-    public void update(int id, Payment payment);
-    public String delete(int id);
+    public List<Payment> getAllPayments();
+    public List<Payment> getAllPaymentsByCustomer(String customer);
+    public Payment getPaymentByID(int id);
+    public void createPayment(Payment payment);
+    public void updatePayment(int id, Payment payment);
+    public String deletePayment(int id);
 }

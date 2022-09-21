@@ -7,9 +7,9 @@ import com.solvd.deliverybusiness.model.Customer;
 import java.util.List;
 
 public interface ICustomerService {
-    public List<Customer> getAll();
-    public Customer getByID(int id) throws InvalidIDException;
-    public void create(Customer customer) throws DatabaseException;
-    public void update(int id, Customer customer) throws InvalidIDException, DatabaseException;
-    public String delete(int id) throws DatabaseException;
+    public List<Customer> getAllCustomers();
+    public Customer getCustomerByID(int id) throws InvalidIDException;
+    public void createCustomer(Customer customer) throws DatabaseException;
+    public void updateCustomer(int id, Customer customer) throws InvalidIDException, DatabaseException;
+    public String deleteCustomer(int id) throws DatabaseException;
 }

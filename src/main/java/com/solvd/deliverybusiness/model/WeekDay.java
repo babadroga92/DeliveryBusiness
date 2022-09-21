@@ -1,23 +1,23 @@
 package com.solvd.deliverybusiness.model;
 
 public class WeekDay {
-    private int ID;
+    private int id;
     private String day;
 
     public WeekDay() {
     }
 
-    public WeekDay(int ID, String day) {
-        this.ID = ID;
+    public WeekDay(int id, String day) {
+        this.id = id;
         this.day = day;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDay() {

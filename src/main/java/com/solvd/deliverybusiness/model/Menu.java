@@ -1,7 +1,7 @@
 package com.solvd.deliverybusiness.model;
 
 public class Menu {
-    private int ID;
+    private int id;
     private String name;
     private boolean isActive;
     private int restaurantID;
@@ -9,19 +9,19 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(int ID, String name, boolean isActive, int restaurantID) {
-        this.ID = ID;
+    public Menu(int id, String name, boolean isActive, int restaurantID) {
+        this.id = id;
         this.name = name;
         this.isActive = isActive;
         this.restaurantID = restaurantID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -51,7 +51,7 @@ public class Menu {
     @Override
     public String toString() {
         return "Menu{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", name='" + name + '\'' +
                 ", isActive=" + isActive +
                 ", restaurantID=" + restaurantID +

@@ -6,10 +6,10 @@ import com.solvd.deliverybusiness.model.Restaurant;
 import java.util.List;
 
 public interface IMenuService {
-    public List<Menu> getAll();
-    public Menu getByID(int id);
-    public void create(Menu menu);
-    public void update(int id, Menu menu);
-    public String delete(int id);
+    public List<Menu> getAllMenu();
+    public Menu getMenuByID(int id);
+    public void createMenu(Menu menu);
+    public void updateMenu(int id, Menu menu);
+    public String deleteMenu(int id);
     public List<Menu> restaurantMenu(Restaurant restaurant);
 }

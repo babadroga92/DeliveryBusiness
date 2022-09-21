@@ -1,7 +1,7 @@
 package com.solvd.deliverybusiness.model;
 
 public class Coupons {
-    private int ID;
+    private int id;
     private String code;
     private String name;
     private String restaurantID;
@@ -10,19 +10,19 @@ public class Coupons {
 
     }
 
-    public Coupons(int ID, String code, String name, String restaurantID) {
-        this.ID = ID;
+    public Coupons(int id, String code, String name, String restaurantID) {
+        this.id = id;
         this.code = code;
         this.name = name;
         this.restaurantID = restaurantID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCode() {

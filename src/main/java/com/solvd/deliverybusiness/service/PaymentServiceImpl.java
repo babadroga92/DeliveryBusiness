@@ -15,32 +15,36 @@ public class PaymentServiceImpl implements IPaymentService{
 
 
     @Override
-    public List<Payment> getAll() {
-        return null;
+    public List<Payment> getAllPayments() {
+
+        return this.paymentDao.getAllPayments();
     }
 
     @Override
-    public List<Payment> getAllByCustomer(String customer) {
-        return null;
+    public List<Payment> getAllPaymentsByCustomer(String customer) {
+
+        return this.paymentDao.getAllPaymentsByCustomer(customer);
     }
 
     @Override
-    public Payment getByID(int id) {
-        return null;
+    public Payment getPaymentByID(int id) {
+
+        return paymentDao.getPaymentByID(id);
     }
 
     @Override
-    public void create(Payment payment) {
-
+    public void createPayment(Payment payment) {
+        this.paymentDao.createPayment(payment);
     }
 
     @Override
-    public void update(int id, Payment payment) {
-
+    public void updatePayment(int id, Payment payment) {
+        this.paymentDao.updatePayment(id, payment);
     }
 
     @Override
-    public String delete(int id) {
-        return null;
+    public String deletePayment(int id) {
+
+        return this.paymentDao.deletePayment(id);
     }
 }

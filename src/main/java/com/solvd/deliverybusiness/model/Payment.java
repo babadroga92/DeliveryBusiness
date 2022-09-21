@@ -1,25 +1,25 @@
 package com.solvd.deliverybusiness.model;
 
 public class Payment {
-    private int ID;
+    private int id;
     private double amount;
     private int customerID;
 
     public Payment() {
     }
 
-    public Payment(int ID, double amount, int customerID) {
-        this.ID = ID;
+    public Payment(int id, double amount, int customerID) {
+        this.id = id;
         this.amount = amount;
         this.customerID = customerID;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getAmount() {
