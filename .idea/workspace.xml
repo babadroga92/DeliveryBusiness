@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Created 5 json files&#10;Created service and implemented them in main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/connection/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/deliverybusiness/dao/RestaurantDao.java" afterDir="false" />
-    </list>
+    <list default="true" id="b698f8f0-66b5-4d1a-8b7a-479fb98287de" name="Changes" comment="Added basic data source connection pool max 10" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663776124161</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added basic data source connection pool max 10">
+      <created>1663778990928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663778990928</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,7 +150,8 @@
     <MESSAGE value="Added .idea to .gitignore" />
     <MESSAGE value="Added XML validator for menu and payment" />
     <MESSAGE value="Created 5 json files&#10;Created service and implemented them in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created 5 json files&#10;Created service and implemented them in main" />
+    <MESSAGE value="Added basic data source connection pool max 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic data source connection pool max 10" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DeliveryBusiness$com_solvd_deliverybusiness_App.ic" NAME="com.solvd.deliverybusiness.App Coverage Results" MODIFIED="1663096258636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
