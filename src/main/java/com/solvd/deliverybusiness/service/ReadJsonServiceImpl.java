@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class ReadJsonServiceImpl implements IReadJson {
+
+    public <T> T convertGenericJson(String path,  Class<?> target) throws IOException, ClassNotFoundException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(new File(path), mapper .getTypeFactory().constructCollectionType(List.class, Class.forName(target.getName())));
+    }
     @Override
     public void readCityJson(String path) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();

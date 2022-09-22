@@ -4,10 +4,7 @@ import com.solvd.deliverybusiness.dao.CustomerDao;
 import com.solvd.deliverybusiness.dao.MenuDao;
 import com.solvd.deliverybusiness.dao.OrderDao;
 import com.solvd.deliverybusiness.dao.RestaurantDao;
-import com.solvd.deliverybusiness.model.Customer;
-import com.solvd.deliverybusiness.model.Menu;
-import com.solvd.deliverybusiness.model.Order;
-import com.solvd.deliverybusiness.model.Restaurant;
+import com.solvd.deliverybusiness.model.*;
 import com.solvd.deliverybusiness.service.*;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.logging.log4j.Level;
@@ -42,6 +39,12 @@ public class App {
             DatabaseConnection connectDB = new DatabaseConnection();
             BasicDataSource bs = connectDB.pollConnection();
             Connection connection = bs.getConnection();
+            ReadJsonServiceImpl jsonService = new ReadJsonServiceImpl();
+            List<City> cityList = jsonService.convertGenericJson("src/main/resources/city.json", City.class);
+            cityList.forEach(s->System.out.println(s));
+            List<WeekDay> weekDayList = jsonService.convertGenericJson("src/main/resources/weekDay.json", WeekDay.class);
+            weekDayList.forEach(s->System.out.println(s));
+
 //            Connection connection = connectDB.createConnection();
             CustomerDao customerDao = new CustomerDao(connection);
             CustomerServiceImpl menadzerZaMusteriju = new CustomerServiceImpl(customerDao);
